@@ -7,17 +7,15 @@ from datetime import datetime
 
 mydb = mysql.connector.connect(
   host="localhost",
-  user="alice",
-  password="fit",
+  user="root",
   database="kontronik_control"
 )
 
 mydbcursor = mydb.cursor()
 
 
-# pobieramy strone pod danym adresem oraz domyslnie program dziala jako deamon
 while (1):
-   
+    # pobieramy strone pod danym adresem np 192.168.0.1
     r = requests.get("https://mateuszoleksy.github.io/")
     # przeksztalcamy ja na kod html zrozumialy dla py
     soup = BeautifulSoup(r.content, 'html.parser')
@@ -26,18 +24,19 @@ while (1):
 
     now = datetime.now()
 
-    current_time = now.strftime("%H:%M:%S")
+    current_time = now.strftime("%Y-%m-%d %H:%M:%S")
     
     
     sql = "INSERT INTO data (time, temperature) VALUES (%s, %s)"
     val = (current_time, value)
     mydbcursor.execute(sql, val)
-
+    #usun stare rekord, domyslnie jest powyzej 1 minuty usuwane
+    mydbcursor.execute("DELETE FROM data WHERE time <= now() - interval 1 minute")
     mydb.commit()
 
     # pobieramy zawartosc klasy albo id 
-    print(time.ctime)
-    f = open("index.html", "w")
+    print(current_time)
+    f = open("C:/xampp/htdocs/index.html", "w")
     f.write('''
             <html>
                 <head>
