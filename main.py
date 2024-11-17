@@ -35,19 +35,6 @@ while (1):
     mydb.commit()
 
     # pobieramy zawartosc klasy albo id 
-    print(current_time)
-    f = open("C:/xampp/htdocs/index.html", "w")
-    f.write('''
-            <html>
-                <head>
-                <title>Temperatura RACK</title>
-                </head>
-                <body>
-                    <h1>Temperatura w szafie RACK wynosi: '''+value+" time: "+current_time+'''</h1>
-                </body>
-            </html>
-            ''')
-    f.close()
-    
+
     time.sleep(3)
 
