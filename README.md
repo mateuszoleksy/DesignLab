@@ -16,3 +16,7 @@ We chose Rack environment control.
 
 #5
 11.14.24 pomyślna instalacja i uruchomienie lokalnego serwera z pomocą apache2
+
+#6
+11.17.24 realizacja głównego skryptu działającego w trybie "deamon" oraz bazy danych i strony internetowej na serwerze lokalnym.
+Zrealizowana funkcja pobierania danych (tempertury) pod wskazanym adresem IP i wpisywania tych danych do bazy danych.
