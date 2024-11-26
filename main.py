@@ -3,12 +3,21 @@ from bs4 import BeautifulSoup
 import time
 import mysql.connector
 from datetime import datetime
+import configparser
+
+
+config = configparser.ConfigParser()
+
+config.read("config.ini")
+config.sections()
+
 
 
 mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  database="kontronik_control"
+  host=config["source"]["host"],
+  user=config["source"]["user"],
+  password=config["source"]["password"],
+  database=config["source"]["database"]
 )
 
 mydbcursor = mydb.cursor()
@@ -16,7 +25,7 @@ mydbcursor = mydb.cursor()
 
 while (1):
     # pobieramy strone pod danym adresem np 192.168.0.1
-    r = requests.get("https://mateuszoleksy.github.io/")
+    r = requests.get(config["destionation"]["temperature_ip"])
     # przeksztalcamy ja na kod html zrozumialy dla py
     soup = BeautifulSoup(r.content, 'html.parser')
     value = soup.find("div",id="title").text
