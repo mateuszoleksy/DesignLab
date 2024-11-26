@@ -20,3 +20,6 @@ We chose Rack environment control.
 #6
 11.17.24 realizacja głównego skryptu działającego w trybie "deamon" oraz bazy danych i strony internetowej na serwerze lokalnym.
 Zrealizowana funkcja pobierania danych (tempertury) pod wskazanym adresem IP i wpisywania tych danych do bazy danych.
+
+#7
+11.26.24 dodanie pliku konfiguracyjnego, tak aby możliwa była modyfikacja połączenia bez wchodzenia w kod źródłowy
