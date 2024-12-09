@@ -23,3 +23,6 @@ Zrealizowana funkcja pobierania danych (tempertury) pod wskazanym adresem IP i w
 
 #7
 11.26.24 dodanie pliku konfiguracyjnego, tak aby możliwa była modyfikacja połączenia bez wchodzenia w kod źródłowy
+
+#8
+9.11.24 dodanie obsługi bluetooth, poprawienie konfiguracji w celu zczytywania danych z danego adres IP. Do zrobienia poprawne dekodowanie danych pochodzacych z termometru BT.
