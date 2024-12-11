@@ -28,4 +28,4 @@ Zrealizowana funkcja pobierania danych (tempertury) pod wskazanym adresem IP i w
 9.11.24 dodanie obsługi bluetooth, poprawienie konfiguracji w celu zczytywania danych z danego adres IP. Do zrobienia poprawne dekodowanie danych pochodzacych z termometru BT.
 
 #9
-11.11.24 dodanie koncowego kodu do obslugi bluetooth. Zaktualizowanie strony. Dodanie opcji do pliku konfiguracyjnego config.ini. 
+11.11.24 dodanie koncowego kodu do obslugi bluetooth. Zaktualizowanie strony. Dodanie opcji do pliku konfiguracyjnego config.ini. Zaktualizowanie strony domowej. Program poprawnie zczytuje dane z urządzania BT oraz strony pod danym adresem IP.
