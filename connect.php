@@ -1,6 +1,6 @@
 <?php
 
-    $config = parse_ini_file("~/Documents/config.ini", true);
+    $config = parse_ini_file("/home/fit/Desktop/config.ini", true);
 
     $host = $config["source"]["host"];
     $db_pass = $config["source"]["password"];
