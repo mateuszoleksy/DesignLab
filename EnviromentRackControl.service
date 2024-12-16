@@ -1,0 +1,14 @@
+[Unit]
+Description=Script for monitoring enviromental sensors (DesignLab)
+After=network.target
+After=mysql.service
+
+[Service]
+ExecStart=/home/fit/Documents/venv_py/bin/python3 /home/fit/Documents/DesignLab/main.py
+Restart=always
+User=root
+Group=root
+Environment="PYTHONUNBUFFERED=1"
+
+[Install]
+WantedBy=multi-user.target

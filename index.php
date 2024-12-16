@@ -11,7 +11,9 @@ if ($connection->connect_errno!=0)
 }
 else
 {
-$sql = "SELECT * FROM data ";
+$sql = "SELECT * FROM dev_temp ORDER BY date DESC";
+$sql_btle = "SELECT * FROM lab_temp ORDER BY date DESC";
+$result_btle = $connection->query($sql_btle);
 $result = $connection->query($sql);
 $connection->close();
 }
@@ -21,7 +23,7 @@ $connection->close();
  
 <head>
     <meta charset="UTF-8">
-    <title>MATEUSZ OLEKSY ADMINISTRACJA</title>
+    <title>Lab environment </title>
     <meta http-equiv="refresh" content="10">
     <style>
         table {
@@ -59,25 +61,45 @@ $connection->close();
  
 <body>
     <section>
-        <h1>Kontronik dane</h1>
+        <h1>Kontronik date, dev temp</h1>
         <table>
             <tr>
                 <th>Time</th>
-                <th>Temperature</th>
+                <th>Temperature [°C]</th>
             </tr>
             <?php 
                 while($rows=$result->fetch_assoc())
                 {
             ?>
             <tr>
-                <td><?php echo $rows['time'];?></td>
-                <td><?php echo $rows['temperature'];?></td>
+                <td><?php echo $rows['date'];?></td>
+                <td><?php echo $rows['temp'];?></td>
             </tr>
             <?php
                 }
             ?>
         </table>
+	 <h1>Bluetooth dev temp</h1>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Temperature [°C]</th>
+            </tr>
+            <?php 
+                while($rows=$result_btle->fetch_assoc())
+                {
+            ?>
+            <tr>
+                <td><?php echo $rows['date'];?></td>
+                <td><?php echo $rows['temp'];?></td>
+            </tr>
+            <?php
+                }
+            ?>
+        </table>
+
+
+	
     </section>
 </body>
- 
 </html>
