@@ -73,4 +73,5 @@ while (1):
 		p.disconnect()
 
 	# pobieramy zawartosc klasy albo id
-	time.sleep(1)
+	time.sleep(config['script']['refresh_rate'])
+
